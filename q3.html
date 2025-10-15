@@ -2,27 +2,28 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>クイズ Q3</title>
+  <title>Q3 答え入力</title>
 </head>
 <body>
-  <h1>Q3: 人間の血の色は？</h1>
+  <h1>Q3の答えを入力してください</h1>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
 
-  <p id="result"></p>
+  <div id="result"></div>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("answer").value.trim();
-      if (input === "赤") {
-        document.getElementById("result").innerHTML = `
+      const ans = document.getElementById("answer").value.trim();
+      const result = document.getElementById("result");
+      if (ans === "赤") {
+        result.innerHTML = `
           ✅ 正解！<br>
-          最後のQRを探して読み取ろう！<br>
-          <small>（ヒント：図書館の入り口）</small>
+          最後のQRを探そう！<br>
+          <small>ヒント：図書館の入り口</small>
         `;
       } else {
-        document.getElementById("result").textContent = "❌ 不正解。";
+        result.textContent = "❌ 不正解。";
       }
     }
   </script>

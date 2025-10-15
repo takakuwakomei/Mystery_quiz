@@ -2,28 +2,30 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>クイズ Q1</title>
+  <title>Q1 答え入力</title>
 </head>
 <body>
-  <h1>Q1: 太陽の色は？</h1>
-  <p>正しい答えを入力してください。</p>
+  <h1>Q1の答えを入力してください</h1>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
 
-  <p id="result"></p>
+  <div id="result"></div>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("answer").value.trim();
-      if (input === "黄色") {
-        document.getElementById("result").innerHTML = `
+      const ans = document.getElementById("answer").value.trim();
+      const result = document.getElementById("result");
+      if (ans === "黄色") {
+        result.innerHTML = `
           ✅ 正解！<br>
-          次のQRコードを探して読み取ろう！<br>
-          <small>（ヒント：校門の近くにある木の根元）</small>
+          次の問題です：<br><br>
+          <strong>Q2：</strong> 月は地球のまわりをまわっている？（はい／いいえ）<br><br>
+          次のQRを探そう！<br>
+          <small>ヒント：校門の近く</small>
         `;
       } else {
-        document.getElementById("result").textContent = "❌ 不正解です。もう一度試してみよう！";
+        result.textContent = "❌ 不正解です。";
       }
     }
   </script>

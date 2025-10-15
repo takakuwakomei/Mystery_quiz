@@ -2,27 +2,30 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>クイズ Q2</title>
+  <title>Q2 答え入力</title>
 </head>
 <body>
-  <h1>Q2: 月は地球のまわりをまわっている？（はい／いいえ）</h1>
+  <h1>Q2の答えを入力してください</h1>
 
-  <input id="answer" type="text" placeholder="はい または いいえ">
+  <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
 
-  <p id="result"></p>
+  <div id="result"></div>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("answer").value.trim();
-      if (input === "はい") {
-        document.getElementById("result").innerHTML = `
+      const ans = document.getElementById("answer").value.trim();
+      const result = document.getElementById("result");
+      if (ans === "はい") {
+        result.innerHTML = `
           ✅ 正解！<br>
-          次のQRコードを探して読み取ろう！<br>
-          <small>（ヒント：体育館の裏）</small>
+          次の問題です：<br><br>
+          <strong>Q3：</strong> 人間の血の色は？<br><br>
+          次のQRを探そう！<br>
+          <small>ヒント：体育館の裏</small>
         `;
       } else {
-        document.getElementById("result").textContent = "❌ 不正解です。";
+        result.textContent = "❌ 不正解です。";
       }
     }
   </script>
