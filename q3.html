@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>問題3</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>クイズ Q3</title>
 </head>
 <body>
-<div class="container">
-  <h2>問題3</h2>
-  <p>「ベンチの裏に貼られたシールの文字は？」</p>
+  <h1>Q3: 人間の血の色は？</h1>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
 
-  <p class="message" id="message"></p>
-</div>
+  <p id="result"></p>
 
-<script>
-function checkAnswer() {
-  const input = document.getElementById("answer").value.trim();
-  const correct = "KOTORI2025"; // ←最終答え
-
-  if (input === correct) {
-    document.getElementById("message").textContent = "クリア！おめでとう！";
-    setTimeout(() => {
-      window.location.href = "clear.html";
-    }, 1500);
-  } else {
-    document.getElementById("message").textContent = "惜しい！もう一度見直してみよう。";
-  }
-}
-</script>
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      if (input === "赤") {
+        location.href = "end.html";
+      } else {
+        document.getElementById("result").textContent = "違います。";
+      }
+    }
+  </script>
 </body>
 </html>

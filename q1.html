@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>問題1</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>クイズ Q1</title>
 </head>
 <body>
-<div class="container">
-  <h2>問題1</h2>
-  <p>「赤い屋根の建物の前にあるものは？」</p>
+  <h1>Q1: 太陽の色は？</h1>
+  <p>正しい答えを入力してください。</p>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
 
-  <p class="message" id="message"></p>
-</div>
+  <p id="result"></p>
 
-<script>
-function checkAnswer() {
-  const input = document.getElementById("answer").value.trim();
-  const correct = "ポスト"; // ←この問題の答え
-
-  if (input === correct) {
-    document.getElementById("message").textContent = "正解！次のQRを探せ！";
-    setTimeout(() => {
-      window.location.href = "q2.html"; // 次の問題ページ
-    }, 1500);
-  } else {
-    document.getElementById("message").textContent = "不正解…ヒント：手紙を入れるもの";
-  }
-}
-</script>
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      if (input === "黄色") {
+        // 正解 → 次の問題へ
+        location.href = "q2.html";
+      } else {
+        document.getElementById("result").textContent = "不正解です。もう一度！";
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>問題2</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>クイズ Q2</title>
 </head>
 <body>
-<div class="container">
-  <h2>問題2</h2>
-  <p>「ポストの近くにある黒い物体の名前は？」</p>
+  <h1>Q2: 月は地球のまわりをまわっている？（はい／いいえ）</h1>
 
-  <input id="answer" type="text" placeholder="答えを入力">
+  <input id="answer" type="text" placeholder="はい または いいえ">
   <button onclick="checkAnswer()">送信</button>
 
-  <p class="message" id="message"></p>
-</div>
+  <p id="result"></p>
 
-<script>
-function checkAnswer() {
-  const input = document.getElementById("answer").value.trim();
-  const correct = "ベンチ"; // ←この問題の答え
-
-  if (input === correct) {
-    document.getElementById("message").textContent = "正解！最終問題へ進め！";
-    setTimeout(() => {
-      window.location.href = "q3.html";
-    }, 1500);
-  } else {
-    document.getElementById("message").textContent = "違うみたい…座れるものを思い出して！";
-  }
-}
-</script>
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      if (input === "はい") {
+        location.href = "q3.html";
+      } else {
+        document.getElementById("result").textContent = "残念、もう一度！";
+      }
+    }
+  </script>
 </body>
 </html>
