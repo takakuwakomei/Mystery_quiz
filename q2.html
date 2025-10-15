@@ -16,9 +16,13 @@
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim();
       if (input === "はい") {
-        location.href = "q3.html";
+        document.getElementById("result").innerHTML = `
+          ✅ 正解！<br>
+          次のQRコードを探して読み取ろう！<br>
+          <small>（ヒント：体育館の裏）</small>
+        `;
       } else {
-        document.getElementById("result").textContent = "残念、もう一度！";
+        document.getElementById("result").textContent = "❌ 不正解です。";
       }
     }
   </script>

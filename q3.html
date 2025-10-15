@@ -16,9 +16,13 @@
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim();
       if (input === "赤") {
-        location.href = "end.html";
+        document.getElementById("result").innerHTML = `
+          ✅ 正解！<br>
+          最後のQRを探して読み取ろう！<br>
+          <small>（ヒント：図書館の入り口）</small>
+        `;
       } else {
-        document.getElementById("result").textContent = "違います。";
+        document.getElementById("result").textContent = "❌ 不正解。";
       }
     }
   </script>

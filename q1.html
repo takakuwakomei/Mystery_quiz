@@ -17,10 +17,13 @@
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim();
       if (input === "黄色") {
-        // 正解 → 次の問題へ
-        location.href = "q2.html";
+        document.getElementById("result").innerHTML = `
+          ✅ 正解！<br>
+          次のQRコードを探して読み取ろう！<br>
+          <small>（ヒント：校門の近くにある木の根元）</small>
+        `;
       } else {
-        document.getElementById("result").textContent = "不正解です。もう一度！";
+        document.getElementById("result").textContent = "❌ 不正解です。もう一度試してみよう！";
       }
     }
   </script>
