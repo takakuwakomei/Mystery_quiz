@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Q3 答え入力</title>
+  <title>Q3 <ruby>答<rt>こた</rt></ruby>え<ruby>入力<rt>にゅうりょく</rt></ruby></title>
 </head>
 <body>
-  <h1>Q3の答えを入力してください</h1>
+  <h1>Q3の<ruby>答<rt>こた</rt></ruby>えを<ruby>入力<rt>にゅうりょく</rt></ruby>してください</h1>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
@@ -18,12 +18,12 @@
       const result = document.getElementById("result");
       if (ans === "赤") {
         result.innerHTML = `
-          ✅ 正解！<br>
-          最後のQRを探そう！<br>
-          <small>ヒント：図書館の入り口</small>
+          ✅ <ruby>正解<rt>せいかい</rt></ruby>！<br>
+          <ruby>最後<rt>さいご</rt></ruby>のQRを<ruby>探<rt>さが</rt></ruby>そう！<br>
+          <small><ruby>ヒント<rt>ひんと</rt></ruby>：<ruby>図書館<rt>としょかん</rt></ruby>の<ruby>入口<rt>いりぐち</rt></ruby></small>
         `;
       } else {
-        result.textContent = "❌ 不正解。";
+        result.textContent = "❌ <ruby>不正解<rt>ふせいかい</rt></ruby>。";
       }
     }
   </script>

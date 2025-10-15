@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Q1 答え入力</title>
+  <title>Q1 <ruby>答<rt>こた</rt></ruby>え<ruby>入力<rt>にゅうりょく</rt></ruby></title>
 </head>
 <body>
-  <h1>Q1の答えを入力してください</h1>
+  <h1>Q1の<ruby>答<rt>こた</rt></ruby>えを<ruby>入力<rt>にゅうりょく</rt></ruby>してください</h1>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
@@ -18,14 +18,17 @@
       const result = document.getElementById("result");
       if (ans === "黄色") {
         result.innerHTML = `
-          ✅ 正解！<br>
-          次の問題です：<br><br>
-          <strong>Q2：</strong> 月は地球のまわりをまわっている？（はい／いいえ）<br><br>
-          次のQRを探そう！<br>
-          <small>ヒント：校門の近く</small>
+          ✅ <ruby>正解<rt>せいかい</rt></ruby>！<br>
+          <ruby>次<rt>つぎ</rt></ruby>の<ruby>問題<rt>もんだい</rt></ruby>です：<br><br>
+          <strong>Q2：</strong> 
+          <ruby>月<rt>つき</rt></ruby>は
+          <ruby>地球<rt>ちきゅう</rt></ruby>の
+          まわりをまわっている？（はい／いいえ）<br><br>
+          <ruby>次<rt>つぎ</rt></ruby>のQRを<ruby>探<rt>さが</rt></ruby>そう！<br>
+          <small><ruby>ヒント<rt>ひんと</rt></ruby>：<ruby>校門<rt>こうもん</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>く</small>
         `;
       } else {
-        result.textContent = "❌ 不正解です。";
+        result.textContent = "❌ <ruby>不正解<rt>ふせいかい</rt></ruby>です。";
       }
     }
   </script>

@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Q2 答え入力</title>
+  <title>Q2 <ruby>答<rt>こた</rt></ruby>え<ruby>入力<rt>にゅうりょく</rt></ruby></title>
 </head>
 <body>
-  <h1>Q2の答えを入力してください</h1>
+  <h1>Q2の<ruby>答<rt>こた</rt></ruby>えを<ruby>入力<rt>にゅうりょく</rt></ruby>してください</h1>
 
   <input id="answer" type="text" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
@@ -18,14 +18,17 @@
       const result = document.getElementById("result");
       if (ans === "はい") {
         result.innerHTML = `
-          ✅ 正解！<br>
-          次の問題です：<br><br>
-          <strong>Q3：</strong> 人間の血の色は？<br><br>
-          次のQRを探そう！<br>
-          <small>ヒント：体育館の裏</small>
+          ✅ <ruby>正解<rt>せいかい</rt></ruby>！<br>
+          <ruby>次<rt>つぎ</rt></ruby>の<ruby>問題<rt>もんだい</rt></ruby>です：<br><br>
+          <strong>Q3：</strong>
+          <ruby>人間<rt>にんげん</rt></ruby>の
+          <ruby>血<rt>ち</rt></ruby>の
+          <ruby>色<rt>いろ</rt></ruby>は？<br><br>
+          <ruby>次<rt>つぎ</rt></ruby>のQRを<ruby>探<rt>さが</rt></ruby>そう！<br>
+          <small><ruby>ヒント<rt>ひんと</rt></ruby>：<ruby>体育館<rt>たいいくかん</rt></ruby>の<ruby>裏<rt>うら</rt></ruby></small>
         `;
       } else {
-        result.textContent = "❌ 不正解です。";
+        result.textContent = "❌ <ruby>不正解<rt>ふせいかい</rt></ruby>です。";
       }
     }
   </script>
