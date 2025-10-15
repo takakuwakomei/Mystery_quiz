@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>問題2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h2>問題2</h2>
+  <p>「ポストの近くにある黒い物体の名前は？」</p>
+
+  <input id="answer" type="text" placeholder="答えを入力">
+  <button onclick="checkAnswer()">送信</button>
+
+  <p class="message" id="message"></p>
+</div>
+
+<script>
+function checkAnswer() {
+  const input = document.getElementById("answer").value.trim();
+  const correct = "ベンチ"; // ←この問題の答え
+
+  if (input === correct) {
+    document.getElementById("message").textContent = "正解！最終問題へ進め！";
+    setTimeout(() => {
+      window.location.href = "q3.html";
+    }, 1500);
+  } else {
+    document.getElementById("message").textContent = "違うみたい…座れるものを思い出して！";
+  }
+}
+</script>
+</body>
+</html>
