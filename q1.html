@@ -5,27 +5,30 @@
   <title>Q1 <ruby>答<rt>こた</rt></ruby>え<ruby>入力<rt>にゅうりょく</rt></ruby></title>
 </head>
 <body>
-  <h1>Q1の<ruby>答<rt>こた</rt></ruby>えを<ruby>入力<rt>にゅうりょく</rt></ruby>してください</h1>
+  <h1>Q1の<ruby>答<rt>こた</rt></ruby>えを<ruby>選択<rt>せんたく</rt></ruby>してください</h1>
 
-  <input id="answer" type="text" placeholder="答えを入力">
-  <button onclick="checkAnswer()">送信</button>
+  <h2><ruby>第<rt>だい</rt></ruby>1<ruby>問<rt>もん</rt></ruby>：</h2>
+  <p><ruby>太陽<rt>たいよう</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>は<ruby>何色<rt>なにいろ</rt></ruby>？</p>
+
+  <form id="quizForm">
+    <label><input type="radio" name="q1_answer" value="1" onclick="checkAnswer(1)"> 1. <ruby>赤<rt>あか</rt></ruby></label><br>
+    <label><input type="radio" name="q1_answer" value="2" onclick="checkAnswer(2)"> 2. <ruby>青<rt>あお</rt></ruby></label><br>
+    <label><input type="radio" name="q1_answer" value="3" onclick="checkAnswer(3)"> 3. <ruby>黄色<rt>きいろ</rt></ruby></label><br>
+    <label><input type="radio" name="q1_answer" value="4" onclick="checkAnswer(4)"> 4. <ruby>緑<rt>みどり</rt></ruby></label>
+  </form>
 
   <div id="result"></div>
 
   <script>
-    function checkAnswer() {
-      const ans = document.getElementById("answer").value.trim();
+    function checkAnswer(choice) {
       const result = document.getElementById("result");
-      if (ans === "黄色") {
+      // 正解は 3. 黄色
+      if (choice === 3) {
         result.innerHTML = `
           ✅ <ruby>正解<rt>せいかい</rt></ruby>！<br>
-          <ruby>次<rt>つぎ</rt></ruby>の<ruby>問題<rt>もんだい</rt></ruby>です：<br><br>
-          <strong>Q2：</strong> 
-          <ruby>月<rt>つき</rt></ruby>は
-          <ruby>地球<rt>ちきゅう</rt></ruby>の
-          まわりをまわっている？（はい／いいえ）<br><br>
-          <ruby>次<rt>つぎ</rt></ruby>のQRを<ruby>探<rt>さが</rt></ruby>そう！<br>
-          <small><ruby>ヒント<rt>ひんと</rt></ruby>：<ruby>校門<rt>こうもん</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>く</small>
+          <p><a href="q2.html"><ruby>次<rt>つぎ</rt></ruby>の<ruby>問題<rt>もんだい</rt></ruby>へ進む</a></p>
+          <br>
+          <p><small><ruby>次<rt>つぎ</rt></ruby>の<ruby>問題<rt>もんだい</rt></ruby>の<ruby>ヒント<rt>ひんと</rt></ruby>：<ruby>校門<rt>こうもん</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>く</small></p>
         `;
       } else {
         result.textContent = "❌ <ruby>不正解<rt>ふせいかい</rt></ruby>です。";

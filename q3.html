@@ -5,22 +5,30 @@
   <title>Q3 <ruby>答<rt>こた</rt></ruby>え<ruby>入力<rt>にゅうりょく</rt></ruby></title>
 </head>
 <body>
-  <h1>Q3の<ruby>答<rt>こた</rt></ruby>えを<ruby>入力<rt>にゅうりょく</rt></ruby>してください</h1>
+  <h1>Q3の<ruby>答<rt>こた</rt></ruby>えを<ruby>選択<rt>せんたく</rt></ruby>してください</h1>
 
-  <input id="answer" type="text" placeholder="答えを入力">
-  <button onclick="checkAnswer()">送信</button>
+  <h2><ruby>第<rt>だい</rt></ruby>3<ruby>問<rt>もん</rt></ruby>：</h2>
+  <p><ruby>人間<rt>にんげん</rt></ruby>の<ruby>血<rt>ち</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>は？</p>
+
+  <form id="quizForm">
+    <label><input type="radio" name="q3_answer" value="1" onclick="checkAnswer(1)"> 1. <ruby>青<rt>あお</rt></ruby></label><br>
+    <label><input type="radio" name="q3_answer" value="2" onclick="checkAnswer(2)"> 2. <ruby>緑<rt>みどり</rt></ruby></label><br>
+    <label><input type="radio" name="q3_answer" value="3" onclick="checkAnswer(3)"> 3. <ruby>赤<rt>あか</rt></ruby></label><br>
+    <label><input type="radio" name="q3_answer" value="4" onclick="checkAnswer(4)"> 4. <ruby>茶色<rt>ちゃいろ</rt></ruby></label>
+  </form>
 
   <div id="result"></div>
 
   <script>
-    function checkAnswer() {
-      const ans = document.getElementById("answer").value.trim();
+    function checkAnswer(choice) {
       const result = document.getElementById("result");
-      if (ans === "赤") {
+      // 正解は 3. 赤
+      if (choice === 3) {
         result.innerHTML = `
           ✅ <ruby>正解<rt>せいかい</rt></ruby>！<br>
-          <ruby>最後<rt>さいご</rt></ruby>のQRを<ruby>探<rt>さが</rt></ruby>そう！<br>
-          <small><ruby>ヒント<rt>ひんと</rt></ruby>：<ruby>図書館<rt>としょかん</rt></ruby>の<ruby>入口<rt>いりぐち</rt></ruby></small>
+          <p><a href="clear.html"><ruby>全問<rt>ぜんもん</rt></ruby><ruby>クリア<rt>くりあ</rt></ruby>！</a></p>
+          <br>
+          <p><small><ruby>最後<rt>さいご</rt></ruby>の<ruby>暗号<rt>あんごう</rt></ruby>が<ruby>隠<rt>かく</rt></ruby>されています！<br><ruby>図書館<rt>としょかん</rt></ruby>の<ruby>入口<rt>いりぐち</rt></ruby>へ<ruby>急<rt>いそ</rt></ruby>げ！</small></p>
         `;
       } else {
         result.textContent = "❌ <ruby>不正解<rt>ふせいかい</rt></ruby>。";
